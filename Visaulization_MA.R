@@ -49,6 +49,7 @@ ITAPQual_GGPLOT$Evalue <- as.numeric(ITAPQual_GGPLOT$Evalue)
 #let's check if that worked
 class(ITAPQual_GGPLOT$Evalue)
 
+#performed by stephan
 #Let us get rid of NA's, these will just not be drawn in the plot. 
 #Also gets rid of rows that are all NAs
 ITAPQual_GGPLOT.noNA <- ITAPQual_GGPLOT[!is.na(ITAPQual_GGPLOT$Evalue),]
@@ -90,6 +91,8 @@ ITAPQual_GGPLOT.perGene.dt$Taxon <- factor(
   ITAPQual_GGPLOT.perGene.dt$Taxon,
   levels =  Grouporder.v
   )
+  
+#done by stephan
 Telonemia.dt <- data.table("Gene" = "APC", "Taxon" = "Telonemia", "Function" = "Organization", "Present" = 0)
 ITAPQual_GGPLOT.perGene.plusT.dt <- rbind(ITAPQual_GGPLOT.perGene.dt, Telonemia.dt)
 library(ggplot2)
